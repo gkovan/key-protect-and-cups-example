@@ -6,7 +6,7 @@ This example then generates the Bluemix Cloud Foundry command to create a CUPS (
 
 Consumer and Producer REST apps that want to communicate securely can bind to the CUPS service to get access to the secret shared key.
 
-COnfiguration Steps Required:
+Configuration Steps Required:
 -----------------------------
 Note: Currently this example requires hard coding values into the source.  It will be updated to inject config properties using Spring Boot injection using property files.
 
