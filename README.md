@@ -34,6 +34,6 @@ Again, this is just an example.  You would not want to log this info in a real w
 This example can be used in an automated toolchain.
 For example, as part of a build, this program can be executed to get the secret key and create the CUPS service. When the REST consumer and producer apps are built and deployed, they can be bound to the CUPS service to get access to the secret key.
 
-See the git repo: https://github.com/gkovan/secure-microservices-example  for an example of how to create a secure microservice interactions.
+See the git repo: https://github.com/gkovan/secure-microservices-example  for an example of how to create secure microservice interactions.
    
 
