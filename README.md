@@ -24,7 +24,7 @@ Microservice app interacts with Key Protect directly to get shared key for signi
 - Pros:
    - More secure as secret key is not stored anywhere
 - Cons:
-   - If Key Protect service becomes unavailable then microservices will not be able to function as it can not sign or verify JWTs.
+   - Reduced reliability.  If Key Protect service becomes unavailable then microservices will not be able to function as it can not sign or verify JWTs.
 
 
 Key issues that need to be considered:
