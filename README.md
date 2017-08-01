@@ -7,7 +7,7 @@ High level diagram:
 -------------------
 Each microservice apps interacts with Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens.
 
-![Link to image](diagram.png?raw=true)
+![Link to image](diagramv2.png?raw=true)
 
 Pros and Cons of approach:
 ---------------------------
