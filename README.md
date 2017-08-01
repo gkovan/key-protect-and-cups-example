@@ -1,5 +1,24 @@
 # key-protect-and-cups-example
 
+This document discusses approaches for securing microservices where the consumer and provider microservice are both backend services that are components of the same overall application.  For this scenario, we determined that the use of symmetric shared keys is sufficient for securing these types of microservice interactions.  In scenarios where the consumer and provider are not components of the same overall application assymetric publc key crypotography using PKCS would be more appropriate.
+
+Approaches considered for microservice security for components of the same application:
+----------------------------------------------------------------------------------------
+Approach 1: Microservice app interacts with Key Protect directly to get shared key for signing and verifying JWT tokens
+- Pros:
+   - aaa
+   - bbb
+- Cons:
+   - aaa
+   - bbb
+   
+Approach 2: Microservice app interacts with Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens
+   - aaa
+   - bbb
+- Cons:
+   - aaa
+   - bbb
+
 This example demonstrates how you can call the Bluemix Key Protect API to get a key represening the secret shared key used for signing and verifying JWT tokens.
 
 This example then generates the Bluemix Cloud Foundry command to create a CUPS (customer user provided service) service with a VCAP variable that has the value of the shared key.
