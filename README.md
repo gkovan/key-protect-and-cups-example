@@ -5,7 +5,7 @@ This document discusses an approach for securing microservices where the consume
 
 High level diagram:
 -------------------
-Each microservice apps interacts with Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens.
+Each microservice app is bound to the Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens.
 
 ![Link to image](diagramv2.png?raw=true)
 
