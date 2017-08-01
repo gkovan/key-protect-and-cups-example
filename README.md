@@ -32,7 +32,7 @@ The Bluemix commands to get the necessary config info are:
    - bluemix space: 
        - cf space <your_space_name> --guid
    - to loockup 'org name' and 'space name': 
-       = cf target
+       - cf target
 
 Build and run the app:
 ------------------------
