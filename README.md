@@ -25,10 +25,14 @@ Update following values in the config\ApplicationConfig.java file:
    - keyId
 
 The Bluemix commands to get the necessary config info are:    
-   - bluemix token:  'cf oauth-token'
-   - bluemix org:  'cf org <your_organization_name> --guid'
-   - bluemix space: 'cf space <your_space_name> --guid'
-   - to loockup 'org name' and 'space name': cf target
+   - bluemix token: 
+       'cf oauth-token'
+   - bluemix org:  
+       'cf org <your_organization_name> --guid'
+   - bluemix space: 
+       'cf space <your_space_name> --guid'
+   - to loockup 'org name' and 'space name': 
+       cf target
 
 Build and run the app:
 ------------------------
