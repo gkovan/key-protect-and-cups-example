@@ -50,7 +50,7 @@ Note: Currently this example requires hard coding values into the source.  It wi
 
 Create a Key Protect service in your Bluemix account and create a key.
 
-Update following values in the config\ApplicationConfig.java file:
+Update following values in the config\ApplicationConfig.java file (Note: these values are required to invoke the Key Protect API to get the secret key):
    - bluemixToken
    - bluemixOrg
    - bluemixSpace
