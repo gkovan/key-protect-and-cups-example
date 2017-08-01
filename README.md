@@ -1,6 +1,6 @@
 # key-protect-and-cups-example
 
-This document discusses an approach for securing microservices where the consumer and provider microservice are both backend services that are components of the same overall application.  For this scenario, we determined that the use of symmetric shared keys is sufficient for securing these types of microservice interactions.  In scenarios where the consumer and provider are not components of the same overall application assymetric publc key crypotography using PKCS would be more appropriate.
+This document discusses an approach for securing microservices where the consumer and provider microservice are both backend services that are components of the same overall application.  For this scenario, we determined that the use of symmetric shared keys for signing and verifying JWT's is sufficient for securing these types of microservice interactions.  In scenarios where the consumer and provider are not components of the same overall application assymetric publc key crypotography using PKCS would be more appropriate.
 
 
 High level diagram:
