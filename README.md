@@ -15,6 +15,7 @@ Pros and Cons of approach:
    - Enhanced reliablity as each Microservice is gauranteed to always have access to the secret key.  Microservice does not depend on Key Protect service being available. 
 - Cons:
    - Secret key is exposed as a VCAP variable.  Whomever has access to the Bluemix account can discover the secret key.
+   - Secret key in VCAP variable should be Base64 encoded for enhanced security.
 
 Alernative Approach: 
 ---------------------
@@ -22,13 +23,19 @@ Alernative Approach:
 Microservice app interacts with Key Protect directly to get shared key for signing and verifying JWT tokens
 - Pros:
    - More secure as secret key is not stored anywhere
-   - bbb
 - Cons:
-   - aaa
-   - bbb
+   - If Key Protect service becomes unavailable then microservices will not be able to function as it can not sign or verify JWTs.
 
 
-Description of example code in this repo:
+Key issues that need to be considered:
+--------------------------------------
+1) How long is the key (symmetric shared key) valid for?  How often does the key need to be refreshed?
+   - Policies need to be established to determine this.
+   
+2) When a consumer microservice generates a JWT token,  how long is the token valid for?
+   - An order of magnitude of seconds is sufficient for a synchronous invocation (e.g. 20 seconds should be more then enough time).
+
+Description of sample code in this repo:
 -------------------------------------------
 This example demonstrates how you can call the Bluemix Key Protect API to get a key represening the secret shared key used for signing and verifying JWT tokens.
 
