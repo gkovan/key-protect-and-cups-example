@@ -1,34 +1,40 @@
 # key-protect-and-cups-example
 
-This document discusses approaches for securing microservices where the consumer and provider microservice are both backend services that are components of the same overall application.  For this scenario, we determined that the use of symmetric shared keys is sufficient for securing these types of microservice interactions.  In scenarios where the consumer and provider are not components of the same overall application assymetric publc key crypotography using PKCS would be more appropriate.
+This document discusses an approach for securing microservices where the consumer and provider microservice are both backend services that are components of the same overall application.  For this scenario, we determined that the use of symmetric shared keys is sufficient for securing these types of microservice interactions.  In scenarios where the consumer and provider are not components of the same overall application assymetric publc key crypotography using PKCS would be more appropriate.
 
-Approaches considered for microservice security for components of the same application:
-----------------------------------------------------------------------------------------
-Approach 1: Microservice app interacts with Key Protect directly to get shared key for signing and verifying JWT tokens
+
+High level diagram:
+-------------------
+Each microservice apps interacts with Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens.
+
+![Link to image](diagram.png?raw=true)
+
+Pros and Cons of approach:
+---------------------------
 - Pros:
-   - aaa
-   - bbb
+   - Enhanced reliablity as each Microservice is gauranteed to always have access to the secret key.  Microservice does not depend on Key Protect service being available. 
 - Cons:
-   - aaa
-   - bbb
-   
-Approach 2: Microservice app interacts with Custom User Provided Service (CUPS) to get shared key for signing and verifying JWT tokens
-   - aaa
+   - Secret key is exposed as a VCAP variable.  Whomever has access to the Bluemix account can discover the secret key.
+
+Alernative Approach: 
+---------------------
+
+Microservice app interacts with Key Protect directly to get shared key for signing and verifying JWT tokens
+- Pros:
+   - More secure as secret key is not stored anywhere
    - bbb
 - Cons:
    - aaa
    - bbb
 
+
+Description of example code in this repo:
+-------------------------------------------
 This example demonstrates how you can call the Bluemix Key Protect API to get a key represening the secret shared key used for signing and verifying JWT tokens.
 
 This example then generates the Bluemix Cloud Foundry command to create a CUPS (customer user provided service) service with a VCAP variable that has the value of the shared key.
 
 Consumer and Producer REST apps that want to communicate securely can bind to the CUPS service to get access to the secret shared key.
-
-High level diagram:
--------------------
-
-![Link to image](diagram.png?raw=true)
 
 
 Configuration Steps Required:
